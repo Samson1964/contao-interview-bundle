@@ -14,29 +14,29 @@
 /**
  * Palettes
  */
-$GLOBALS['TL_DCA']['tl_content']['palettes']['interview'] = '{type_legend},type,headline;{interview_legend},interview;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
+$GLOBALS['TL_DCA']['tl_content']['palettes']['interview'] = '{type_legend},type,headline;{interview_legend},interview;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID;{invisible_legend:hide},invisible,start,stop';
 
 /**
  * Fields
  */
 $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 (
-	'label'					=> &$GLOBALS['TL_LANG']['tl_content']['interview'],
-	'exclude' 				=> true,
-	'inputType' 			=> 'multiColumnWizard',
-	'eval' 					=> array
+	'label'                             => &$GLOBALS['TL_LANG']['tl_content']['interview'],
+	'exclude'                           => true,
+	'inputType'                         => 'multiColumnWizard',
+	'eval'                              => array
 	(
-		'buttonPos' 		=> 'top',
-		'buttons'			=> array
+		'buttonPos'                     => 'top',
+		'buttons'                       => array
 		(
 			//'copy' 			=> true, 
 			//'delete' 		=> true,
 			//'up' 			=> true,
 			//'down'			=> true
 		),
-		'columnFields' 		=> array
+		'columnFields'                  => array
 		(
-			'published' => array
+			'published'                 => array
 			(
 				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_published'],
 				'exclude'               => true,
@@ -47,7 +47,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 					'valign'            => 'top'
 				)
 			),
-			'question' => array
+			'question'                  => array
 			(
 				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_question'],
 				'exclude'               => true,
@@ -55,12 +55,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 				'eval'                  => array
 				(
 					'rte'               =>'tinyMCE',
-					'style'             => 'width:300px; height:100px;',
+					'style'             => 'width:400px; height:150px;',
 					'allowHtml'         => true,
 					//'columnPos'         => '1'
 				)
 			),
-			'answer' => array
+			'answer'                    => array
 			(
 				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_answer'],
 				'exclude'               => true,
@@ -68,12 +68,12 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 				'eval'                  => array
 				(
 					'rte'               =>'tinyMCE',
-					'style'             => 'width:300px; height:100px;',
+					'style'             => 'width:400px; height:150px;',
 					'allowHtml'         => true,
 					//'columnPos'         => '1'
 				)
 			),
 		)
 	),
-	'sql'                   => "blob NULL"
+	'sql'                               => "blob NULL"
 );
