@@ -1,5 +1,10 @@
 # Interview Changelog
 
+## Version 2.0.1 (2025-02-09)
+
+* Add: Frage/Antwort ausblenden, wenn leer -> wird im Template gemacht
+* Add: Einbindung Standard-CSS
+
 ## Version 2.0.0 (2025-02-09)
 
 * Add: Kompatibilität mit PHP 8

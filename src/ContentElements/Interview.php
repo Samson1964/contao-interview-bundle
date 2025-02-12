@@ -30,6 +30,7 @@ class Interview extends \ContentElement
 	{
 
 		$this->Template->interview = unserialize($this->interview);
+		$this->Template->interview_css = $GLOBALS['TL_CONFIG']['interview_css'];
 
 		return;
 

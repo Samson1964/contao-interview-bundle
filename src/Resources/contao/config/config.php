@@ -17,3 +17,11 @@
  * -------------------------------------------------------------------------
  */
 $GLOBALS['TL_CTE']['texts']['interview'] = 'Schachbulle\ContaoInterviewBundle\ContentElements\Interview';
+
+/**
+ * -------------------------------------------------------------------------
+ * Voreinstellungen
+ * -------------------------------------------------------------------------
+ */
+
+$GLOBALS['TL_CONFIG']['interview_css'] = false;

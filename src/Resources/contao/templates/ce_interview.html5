@@ -1,12 +1,18 @@
 <?php $this->extend('block_searchable'); ?>
 
+<?php if($this->interview_css) $GLOBALS['TL_CSS'][] = 'bundles/contaointerview/default.css'; ?>
+
 <?php $this->block('content'); ?>
 
 	<?php if($this->interview): ?>
 		<?php foreach($this->interview as $item): ?>
 			<?php if($item['published']): ?>
-				<div class="interview_question"><?= $item['question'] ?></div>
-				<div class="interview_answer"><?= $item['answer'] ?></div>
+				<?php if($item['question']): ?>
+					<div class="interview_question"><?= $item['question'] ?></div>
+				<?php endif; ?>
+				<?php if($item['answer']): ?>
+					<div class="interview_answer"><?= $item['answer'] ?></div>
+				<?php endif; ?>
 			<?php endif; ?>
 		<?php endforeach; ?>
 	<?php endif; ?>
