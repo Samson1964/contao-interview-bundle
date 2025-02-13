@@ -1,15 +1,9 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
+<?php
 
-/**
- * Contao Open Source CMS
- *
- * Copyright (C) 2005-2013 Leo Feyer
- *
- * @package   fen
- * @author    Frank Hoppe
- * @license   GNU/LGPL
- * @copyright Frank Hoppe 2013
- */
+if(TL_MODE == 'BE')
+{
+	$GLOBALS['TL_CSS'][] = 'bundles/contaointerview/backend.css';
+}
 
 /**
  * -------------------------------------------------------------------------

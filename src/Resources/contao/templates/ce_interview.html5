@@ -1,3 +1,5 @@
+<?php $this->showTemplateVars() ?>
+
 <?php $this->extend('block_searchable'); ?>
 
 <?php if($this->interview_css) $GLOBALS['TL_CSS'][] = 'bundles/contaointerview/default.css'; ?>
@@ -10,8 +12,28 @@
 				<?php if($item['question']): ?>
 					<div class="interview_question"><?= $item['question'] ?></div>
 				<?php endif; ?>
+				<?php if($item['question_image']): ?>
+					<div><figure class="image_container">
+						<a href="<?= $item['question_image']->singleSRC ?>" data-lightbox="">
+							<img src="<?= $item['question_image']->src ?>"<?= $item['question_image']->imgSize ?>>
+						</a>
+						<?php if($item['question_image']->caption): ?>
+							<figcaption class="caption"><?= $item['question_image']->caption ?></figcaption>
+						<?php endif; ?>
+					</figure></div>
+				<?php endif; ?>
 				<?php if($item['answer']): ?>
 					<div class="interview_answer"><?= $item['answer'] ?></div>
+				<?php endif; ?>
+				<?php if($item['answer_image']): ?>
+					<div><figure class="image_container">
+						<a href="<?= $item['answer_image']->singleSRC ?>" data-lightbox="">
+							<img src="<?= $item['answer_image']->src ?>"<?= $item['answer_image']->imgSize ?>>
+						</a>
+						<?php if($item['answer_image']->caption): ?>
+							<figcaption class="caption"><?= $item['answer_image']->caption ?></figcaption>
+						<?php endif; ?>
+					</figure></div>
 				<?php endif; ?>
 			<?php endif; ?>
 		<?php endforeach; ?>

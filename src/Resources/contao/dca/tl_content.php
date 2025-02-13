@@ -1,15 +1,4 @@
-<?php if (!defined('TL_ROOT')) die('You cannot access this file directly!');
-
-/**
- * Contao Open Source CMS
- *
- * Copyright (C) 2005-2013 Leo Feyer
- *
- * @package   fen
- * @author    Frank Hoppe
- * @license   GNU/LGPL
- * @copyright Frank Hoppe 2013
- */
+<?php
 
 /**
  * Palettes
@@ -27,13 +16,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 	'eval'                              => array
 	(
 		'buttonPos'                     => 'top',
-		'buttons'                       => array
-		(
-			//'copy' 			=> true, 
-			//'delete' 		=> true,
-			//'up' 			=> true,
-			//'down'			=> true
-		),
 		'columnFields'                  => array
 		(
 			'published'                 => array
@@ -42,8 +24,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 				'exclude'               => true,
 				'inputType'             => 'checkbox',
 				'eval'                  => array
-				(	
+				(
 					'style'             => 'width: 20px',
+					'columnPos'         => 'spalte1',
 					'valign'            => 'top'
 				)
 			),
@@ -55,9 +38,9 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 				'eval'                  => array
 				(
 					'rte'               =>'tinyMCE',
-					'style'             => 'width:400px; height:150px;',
+					'style'             => 'width:450px; height:100px;',
+					'columnPos'         => 'spalte2',
 					'allowHtml'         => true,
-					//'columnPos'         => '1'
 				)
 			),
 			'answer'                    => array
@@ -68,12 +51,80 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['interview'] = array
 				'eval'                  => array
 				(
 					'rte'               =>'tinyMCE',
-					'style'             => 'width:400px; height:150px;',
+					'style'             => 'width:450px; height:100px;',
+					'columnPos'         => 'spalte3',
 					'allowHtml'         => true,
-					//'columnPos'         => '1'
 				)
+			),
+			'question_image'            => array
+			(
+				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_question_image'],
+				'exclude'               => true,
+				'inputType'             => 'fileTree',
+				'eval'                  => array
+				(
+					'filesOnly'         => true,
+					'fieldType'         => 'radio',
+					'valign'            => 'top',
+					'columnPos'         => 'spalte2',
+					'extensions'        => '%contao.image.valid_extensions%',
+					'style'             => 'width:100px;'
+				),
+			),
+			'answer_image'              => array
+			(
+				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_answer_image'],
+				'exclude'               => true,
+				'inputType'             => 'fileTree',
+				'eval'                  => array
+				(
+					'filesOnly'         => true,
+					'fieldType'         => 'radio',
+					'valign'            => 'top',
+					'columnPos'         => 'spalte3',
+					'extensions'        => '%contao.image.valid_extensions%',
+					'style'             => 'width:100px'
+				),
+			),
+			'question_imagesize' => array
+			(
+				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_question_imagesize'],
+				'exclude'               => true,
+				'inputType'             => 'imageSize',
+				'options'               => \System::getImageSizes(),
+				'reference'             => &$GLOBALS['TL_LANG']['MSC'],
+				'eval'                  => array
+				(
+					'rgxp'              => 'natural',
+					'columnPos'         => 'spalte2',
+					'includeBlankOption'=> true, 
+					'nospace'           => true, 
+					'style'             => 'width:100px'
+				),
+			),
+			'answer_imagesize' => array
+			(
+				'label'                 => &$GLOBALS['TL_LANG']['tl_content']['interview_answer_imagesize'],
+				'exclude'               => true,
+				'inputType'             => 'imageSize',
+				'options'               => \System::getImageSizes(),
+				'reference'             => &$GLOBALS['TL_LANG']['MSC'],
+				'eval'                  => array
+				(
+					'rgxp'              => 'natural',
+					'columnPos'         => 'spalte3',
+					'includeBlankOption'=> true, 
+					'nospace'           => true, 
+					'style'             => 'width:100px'
+				),
 			),
 		)
 	),
 	'sql'                               => "blob NULL"
 );
+
+class tl_content_interview extends \Backend
+{
+
+}
+

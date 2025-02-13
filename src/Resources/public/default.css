@@ -9,7 +9,7 @@
 .ce_interview .interview_question {
 	background: #F6F6F6;
 	padding: 10px 20px 1px 50px;
-	background-image: url("bundles/contaointerview/images/icon-frage.svg");
+	background-image: url("/bundles/contaointerview/images/icon_frage.svg");
 	background-repeat: no-repeat;
 	font-weight: bold;
 	background-size: 30px;

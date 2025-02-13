@@ -1,0 +1,13 @@
+/* ********************************************************* */
+/* Interview                                                 */
+/* ********************************************************* */
+
+#ctrl_interview.multicolumnwizard {
+	border-collapse: separate;
+	border-spacing: 0 20px;
+}
+
+#ctrl_interview.multicolumnwizard td {
+	padding-bottom: 20px;
+	border-bottom: 1px solid #BCBCBC;
+}

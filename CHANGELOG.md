@@ -1,5 +1,10 @@
 # Interview Changelog
 
+## Version 2.1.0 (2025-02-13)
+
+* Fix: CSS, weil Grafik nicht gefunden wurde
+* Add: Bild zu Fragen/Antworten hinzufügen
+
 ## Version 2.0.1 (2025-02-09)
 
 * Add: Frage/Antwort ausblenden, wenn leer -> wird im Template gemacht
